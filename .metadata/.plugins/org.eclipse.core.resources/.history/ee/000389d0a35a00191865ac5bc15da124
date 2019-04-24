@@ -1,0 +1,14 @@
+package com.cdac.zuul.security;
+
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.cdac.zuul.entity.JwtConfig;
+
+public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
+	
+	private final JwtConfig jwtConfig;
+	
+	public JwtTokenAuthenticationFilter(JwtConfig jwtConfig) {
+		this.jwtConfig=jwtConfig;
+	}
+}

@@ -1,0 +1,61 @@
+package com.cdac.auth.security;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.cdac.auth.entity.JwtConfig;
+
+public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+	//we use auth manager to validate the user credentials
+	private AuthenticationManager authManager;
+	
+	private final JwtConfig jwtConfig;
+	
+	
+	
+	
+	
+	public JwtUsernameAndPasswordAuthenticationFilter(AuthenticationManager authManager, JwtConfig jwtConfig) {
+		this.authManager = authManager;
+		this.jwtConfig = jwtConfig;
+	}
+
+
+
+
+
+	//A temporary class just to represent the user crendentials
+	private static class UserCrendentials{
+		
+		private String userName,password;
+
+		public String getUserName() {
+			return userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getPassword() {
+			return password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		
+		
+		
+	}
+
+}

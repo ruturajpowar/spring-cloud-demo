@@ -1,0 +1,11 @@
+package com.cdac.gallery.entity;
+
+import java.util.List;
+
+public class Gallery {
+	
+	int id;
+	
+	List<Image> images;
+
+}

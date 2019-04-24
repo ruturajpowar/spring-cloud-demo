@@ -1,0 +1,6 @@
+package com.cdac.auth;
+
+@Service
+public class UserDetailsSeviceImpl {
+
+}

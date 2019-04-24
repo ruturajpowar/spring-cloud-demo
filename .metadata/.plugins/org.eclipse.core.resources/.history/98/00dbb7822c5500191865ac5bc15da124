@@ -1,0 +1,5 @@
+package com.cdac.gallery.controller;
+
+public class FeignImageServiceController {
+
+}

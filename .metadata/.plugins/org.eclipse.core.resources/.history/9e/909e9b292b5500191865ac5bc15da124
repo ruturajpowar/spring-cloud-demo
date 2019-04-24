@@ -1,0 +1,17 @@
+package com.cdac.image.entity;
+
+public class Image {
+	
+	int id;
+	
+	String name;
+	
+	String url;
+
+	public Image(int id, String name, String url) {
+		this.id = id;
+		this.name = name;
+		this.url = url;
+	}
+
+}

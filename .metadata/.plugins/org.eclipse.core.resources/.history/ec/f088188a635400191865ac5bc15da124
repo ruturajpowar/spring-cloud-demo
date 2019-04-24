@@ -1,0 +1,5 @@
+package com.cdac.image.controllers;
+
+public class HomeController {
+
+}

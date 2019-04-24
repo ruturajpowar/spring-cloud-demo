@@ -1,0 +1,5 @@
+package com.cdac.gallery.entity;
+
+public class Gallery {
+
+}

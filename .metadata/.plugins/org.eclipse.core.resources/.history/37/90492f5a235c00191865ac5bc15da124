@@ -1,0 +1,5 @@
+package com.cdac.auth.security;
+
+public class SecurityCredentialsConfig {
+
+}

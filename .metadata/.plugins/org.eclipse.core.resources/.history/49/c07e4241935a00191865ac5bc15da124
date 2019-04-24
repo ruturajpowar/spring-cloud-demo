@@ -1,0 +1,37 @@
+package com.cdac.zuul.security;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer.JwtConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.eureka.zuul.security.JwtConfig;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+	private JwtConfigurer jwtConfigurer;
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception{
+		http.csrf().disable()
+		//make sure you use stateless session; session wont be used to store user's state
+		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+		//handle authorized attempts
+		.exceptionHandling().authenticationEntryPoint((req,rsp,e)->rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED)).and()
+		//Add a filter to to validate the tokens with every request
+		.addFilterAfter(new JwtTokenAuthenticationFilter(JwtConfigurer),UsernamePasswordAuthenticationFilter.class)
+		//authorization requests config
+		.au
+		
+	}
+
+}

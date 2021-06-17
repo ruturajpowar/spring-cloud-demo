@@ -2,7 +2,7 @@ package com.cdac.gallery.entity;
 
 import java.util.List;
 
-import com.cdac.image.entity.Image;
+import com.cdac.common.security.Image;
 
 public class Gallery {
 	

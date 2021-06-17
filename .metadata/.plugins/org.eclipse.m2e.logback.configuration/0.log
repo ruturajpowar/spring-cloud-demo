@@ -2152,3 +2152,11 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2019-04-16 11:38:01,995 [Worker-5151: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-04-16 11:38:01,995 [Worker-5151: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-04-16 11:38:01,995 [Worker-5151: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/ruturaj/cloud/image/src/test/resources
+2019-06-19 10:21:30,483 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-06-19 10:37:22,421 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-06-19 10:40:12,972 [Worker-13: Launching auth] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/ruturaj/cloud/cloud-microservices/auth
+2019-06-19 10:40:12,973 [Worker-13: Launching auth] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-06-19 10:41:08,468 [Worker-15: Launching auth] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/ruturaj/cloud/cloud-microservices/auth
+2019-06-19 10:41:08,469 [Worker-15: Launching auth] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-06-19 10:43:12,111 [Worker-16: Launching auth] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/ruturaj/cloud/cloud-microservices/auth
+2019-06-19 10:43:12,112 [Worker-16: Launching auth] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package

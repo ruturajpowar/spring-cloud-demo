@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.cdac.gallery.entity.Gallery;
 import com.cdac.gallery.service.ImageServiceProxy;
-import com.cdac.image.entity.Image;
+import com.cdac.common.security.Image;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
@@ -40,7 +40,7 @@ public class FeignImageServiceController {
 		gallery.setId(id);
 		
 		@SuppressWarnings("unchecked")    // we'll throw an exception from image service to simulate a failure
-		List<Image> images=imageServiceProxy.findAll();
+		List<Image> images=imageServiceProxy.findAll(id);
 		gallery.setImages(images);
 		return gallery;
 	}
@@ -54,6 +54,7 @@ public class FeignImageServiceController {
 
 	// a fallback method to be called if failure happened
 	public Gallery fallback(int galleryId, Throwable hystrixCommand) {
+		System.out.println("##############################");
 		return new Gallery(galleryId);
 	}
 

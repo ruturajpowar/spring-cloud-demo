@@ -1,8 +1,0 @@
-#give a name to eureka server
-spring.application.name=eureka-server
-
-#default port for eureka server
-server.port=8761
-
-
-
